@@ -1,0 +1,12 @@
+---
+# tasks file for azure_keyvault_secret
+    - name: Create a lookup plugin directory
+      file:
+        path: ~/.ansible/plugins/lookup
+        state: directory
+    - name: Copy azure_keyvault_secret.py to lookup plugins directory
+      copy:
+        src: azure_keyvault_secret.py
+        dest: ~/.ansible/plugins/lookup/azure_keyvault_secret.py
+        mode: '0640'
+
